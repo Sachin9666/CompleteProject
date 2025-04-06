@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTech Mastery Hub</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .card {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+
+    #select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+    }
+
+    .carousel-container {
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .carousel-inner img {
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .typing-container {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ffffff;
+    }
+
+    .typing-container.typing::after {
+      content: '';
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      0%, 100% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+      <h1 class="text-center">BTech Mastery Hub</h1>
+  
+      <!-- Grid Layout: Carousel on Top -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 col-md-10">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner rounded shadow-sm">
+              <div class="carousel-item active position-relative">
+                <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="d-block w-100 img-fluid" alt="CSE">
+                <div class="typing-container" data-text="CSE empowers minds to build the future through code and innovation." data-duration="50"></div>
+              </div>
+              <div class="carousel-item position-relative">
+                <img src="https://gametelecomunicaciones.com/wp-content/uploads/2022/08/iStock-1397047877-scaled.jpg" class="d-block w-100 img-fluid" alt="ECE">
+                <div class="typing-container" data-text="ECE is the backbone of modern communication and electronic innovation." data-duration="50"></div>
+              </div>
+              <div class="carousel-item position-relative">
+                <img src="https://pitt.ac.in/wp-content/uploads/2023/01/cropped-EEE-background-1024x615.png" class="d-block w-100 img-fluid" alt="EEE">
+                <div class="typing-container" data-text="EEE powers the world by bridging electrical energy and electronic innovation." data-duration="50"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Grid Layout: Branch Card -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-6">
+          <div class="card text-center shadow">
+            <h5 class="mb-3">Choose Your Branch</h5>
+            <select id="select" class="form-select shadow-sm text-center">
+              <option value="select" selected>-- Select Your Branch --</option>
+              <option value="cse">CSE</option>
+              <option value="ece">ECE</option>
+              <option value="eee">EEE</option>
+            </select>
+            <p id="para" class=" mt-3 text-muted"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <footer class="text-center mt-5 py-3 bg-dark text-white">
+      &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
+    </footer>
+  
+
+  <!-- Scripts -->
+  <script>
+
+    let selectEl = document.getElementById("select");
+    let link;
+    selectEl.addEventListener("change", function (event) {
+        console.log(event.target.value);
+        if (event.target.value === "cse") {
+            window.location.href="page1.html";
+        } else if (event.target.value === "ece") {
+            window.location.href="page2.html"
+        } else if (event.target.value === "eee") {
+            window.location.href="page3.html"
+        } else {
+            paraEl.textContent = "Select A Branch";
+        }
+    });
+    window.addEventListener('beforeunload', function (event) {
+        selectEl.selectedIndex = "select";
+    });
+
+    function typeText(el, text, speed) {
+      el.classList.remove('typing');
+      el.textContent = '';
+      let i = 0;
+      function typeChar() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeChar, speed);
+        } else {
+          el.classList.add('typing');
+        }
+      }
+      typeChar();
+    }
+
+    function startTypingOnActiveSlide() {
+      const activeSlide = document.querySelector('.carousel-item.active .typing-container');
+      if (activeSlide) {
+        const text = activeSlide.getAttribute('data-text');
+        const duration = parseInt(activeSlide.getAttribute('data-duration')) || 50;
+        typeText(activeSlide, text, duration);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', startTypingOnActiveSlide);
+    const carousel = document.querySelector('#carouselExampleControls');
+    carousel.addEventListener('slid.bs.carousel', startTypingOnActiveSlide);
+
+    
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
