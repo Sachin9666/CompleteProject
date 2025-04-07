@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BTech Mastery Hub</title>
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
@@ -92,10 +90,35 @@
 </head>
 
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">BTech Mastery Hub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#branch">Branches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#carouselExampleControls">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutUs">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
     <div class="container">
       <h1 class="text-center">BTech Mastery Hub</h1>
-  
-      <!-- Grid Layout: Carousel on Top -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-10">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -122,8 +145,7 @@
           </div>
         </div>
       </div>
-  
-      <!-- Grid Layout: Branch Card -->
+
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-6">
           <div class="card text-center shadow">
@@ -139,13 +161,31 @@
         </div>
       </div>
     </div>
+
+      <div id="aboutUs" class="row justify-content-center mb-5">
+      <div class="col-12 col-md-10">
+        <div class="card shadow p-4">
+          <h3 class="text-center text-primary fw-bold mb-3">About Us</h3>
+          <p class="text-muted fs-5">
+            <strong>BTech Mastery Hub</strong> is your ultimate companion on the journey through engineering. 
+            Whether you're in Computer Science, Electronics & Communication, or Electrical Engineering, 
+            this platform offers a clear, semester-wise roadmap tailored to your branch. 
+            Explore project ideas, subject resources, internship guidance, and career tips — all in one place.
+          </p>
+          <p class="text-muted fs-5">
+            Our goal is to simplify your academic life, bridge the gap between curriculum and industry expectations, 
+            and help you stay ahead with smart learning strategies and curated content.
+          </p>
+        </div>
+      </div>
+    </div>
   
     <footer class="text-center mt-5 py-3 bg-dark text-white">
       &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
     </footer>
   
 
-  <!-- Scripts -->
+
   <script>
 
     let selectEl = document.getElementById("select");
