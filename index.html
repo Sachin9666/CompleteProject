@@ -38,6 +38,11 @@
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ced4da;
+      
+    }
+    #select:hover{
+      border-color: rgb(2, 10, 255);
+      background-color: #f1f3f5;
     }
 
     .carousel-container {
@@ -78,7 +83,12 @@
         border-color: white;
       }
     }
-
+    .about-section {
+    background-color: #f1f3f5;
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
     footer {
       text-align: center;
       margin-top: 50px;
@@ -91,7 +101,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark shadow">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="#">BTech Mastery Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -116,12 +126,10 @@
         </div>
       </div>
     </nav>
-  
     <div class="container">
-      <h1 class="text-center">BTech Mastery Hub</h1>
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-10">
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleControls" class="carousel slide mt-5 " data-bs-ride="carousel">
             <div class="carousel-inner rounded shadow-sm">
               <div class="carousel-item active position-relative">
                 <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="d-block w-100 img-fluid" alt="CSE">
@@ -146,7 +154,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" id="branch">
         <div class="col-12 col-sm-10 col-md-6">
           <div class="card text-center shadow">
             <h5 class="mb-3">Choose Your Branch</h5>
@@ -162,30 +170,28 @@
       </div>
     </div>
 
-      <div id="aboutUs" class="row justify-content-center mb-5">
-      <div class="col-12 col-md-10">
-        <div class="card shadow p-4">
-          <h3 class="text-center text-primary fw-bold mb-3">About Us</h3>
+    <section id="aboutUs" class="about-section py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <h3 class="text-center fw-bold text-primary mb-4">About Us</h3>
           <p class="text-muted fs-5">
-            <strong>BTech Mastery Hub</strong> is your ultimate companion on the journey through engineering. 
-            Whether you're in Computer Science, Electronics & Communication, or Electrical Engineering, 
-            this platform offers a clear, semester-wise roadmap tailored to your branch. 
-            Explore project ideas, subject resources, internship guidance, and career tips — all in one place.
+            <strong>BTech Mastery Hub</strong> is a dedicated platform designed to guide B.Tech students throughout their academic journey. 
+            Whether you're pursuing Computer Science, Electronics & Communication, or Electrical Engineering, we provide structured roadmaps, subject-wise materials, and curated resources to help you excel.
           </p>
           <p class="text-muted fs-5">
-            Our goal is to simplify your academic life, bridge the gap between curriculum and industry expectations, 
-            and help you stay ahead with smart learning strategies and curated content.
+            Our mission is to simplify complex topics, bridge the gap between academics and real-world applications, and empower students with the tools and knowledge they need to master their domain.
           </p>
         </div>
       </div>
-    </div>
+    </section>
+
   
     <footer class="text-center mt-5 py-3 bg-dark text-white">
       &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
     </footer>
   
 
-
+ 
   <script>
 
     let selectEl = document.getElementById("select");
@@ -198,8 +204,6 @@
             window.location.href="page2.html"
         } else if (event.target.value === "eee") {
             window.location.href="page3.html"
-        } else {
-            paraEl.textContent = "Select A Branch";
         }
     });
     window.addEventListener('beforeunload', function (event) {
@@ -237,6 +241,12 @@
 
     
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
