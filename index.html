@@ -101,36 +101,35 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">BTech Mastery Hub</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#branch">Branches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#carouselExampleControls">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#aboutUs">About Us</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">BTech Mastery Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#testNavbar" aria-controls="testNavbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="testNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#branch">Branches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#carouselExampleControls">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutUs">About Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
 
     </nav>
-    <div class="container">
+    <div class="container mt-5">
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-10">
           <div id="carouselExampleControls" class="carousel slide mt-5 " data-bs-ride="carousel">
@@ -213,6 +212,7 @@
     window.addEventListener('beforeunload', function (event) {
         selectEl.selectedIndex = "select";
     });
+    
 
     function typeText(el, text, speed) {
       el.classList.remove('typing');
@@ -230,7 +230,13 @@
       typeChar();
     }
 
+  
+
     function startTypingOnActiveSlide() {
+      document.querySelectorAll('.typing-container').forEach(el => {
+        el.classList.remove('typing');
+      });
+
       const activeSlide = document.querySelector('.carousel-item.active .typing-container');
       if (activeSlide) {
         const text = activeSlide.getAttribute('data-text');
@@ -239,18 +245,13 @@
       }
     }
 
+
     document.addEventListener('DOMContentLoaded', startTypingOnActiveSlide);
     const carousel = document.querySelector('#carouselExampleControls');
     carousel.addEventListener('slid.bs.carousel', startTypingOnActiveSlide);
 
     
   </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
