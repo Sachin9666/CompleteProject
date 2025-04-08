@@ -1,260 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BTech Mastery Hub</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
-    }
 
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-weight: 700;
-      color: #2c3e50;
-    }
+  body {
+    
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
 
-    .card {
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 30px;
-      background-color: #ffffff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-    }
+  h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 700;
+    color: #2c3e50;
+  }
 
-    #select {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ced4da;
-      
-    }
-    #select:hover{
-      border-color: rgb(2, 10, 255);
-      background-color: #f1f3f5;
-    }
 
-    .carousel-container {
-      max-width: 1000px;
-      margin: 30px auto;
-    }
+  .card {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-    .carousel-inner img {
-      height: 60vh;
-      object-fit: cover;
-      border-radius: 15px;
-    }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
 
-    .typing-container {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #ffffff;
-    }
+  #select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: 0.3s ease;
+  }
 
-    .typing-container.typing::after {
-      content: '';
-      animation: blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes blink-caret {
-      0%, 100% {
-        border-color: transparent;
-      }
-      50% {
-        border-color: white;
-      }
-    }
-    .about-section {
+  #select:hover {
+    border-color: rgb(2, 10, 255);
     background-color: #f1f3f5;
+  }
+
+
+
+
+  .typing-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+
+  .typing-container.typing::after {
+    content: '';
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: white;
+    }
+  }
+
+  .about-section {
+    background-color: #d7dde3;
     border-radius: 12px;
     padding: 40px 20px;
     margin-bottom: 40px;
+    
   }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #2c3e50;
-      color: white;
-    }
+
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 0.95rem;
+  }
+
+</style>
+
   </style>
 </head>
-
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">BTech Mastery Hub</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#testNavbar" aria-controls="testNavbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="testNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#branch">Branches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#carouselExampleControls">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#aboutUs">About Us</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+  <div class="container-fluid p-2 px-4">
+    <a class="navbar-brand" href="#">BTech Mastery Hub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#testNavbar" aria-controls="testNavbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="testNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#branch">Branches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#carouselExampleControls">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutUs">About Us</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-    </nav>
-    <div class="container mt-5">
-      <div class="row justify-content-center mb-4">
-        <div class="col-12 col-md-10">
-          <div id="carouselExampleControls" class="carousel slide mt-5 " data-bs-ride="carousel">
-            <div class="carousel-inner rounded shadow-sm">
-              <div class="carousel-item active position-relative">
-                <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="d-block w-100 img-fluid" alt="CSE">
-                <div class="typing-container" data-text="CSE empowers minds to build the future through code and innovation." data-duration="50"></div>
-              </div>
-              <div class="carousel-item position-relative">
-                <img src="https://gametelecomunicaciones.com/wp-content/uploads/2022/08/iStock-1397047877-scaled.jpg" class="d-block w-100 img-fluid" alt="ECE">
-                <div class="typing-container" data-text="ECE is the backbone of modern communication and electronic innovation." data-duration="50"></div>
-              </div>
-              <div class="carousel-item position-relative">
-                <img src="https://pitt.ac.in/wp-content/uploads/2023/01/cropped-EEE-background-1024x615.png" class="d-block w-100 img-fluid" alt="EEE">
-                <div class="typing-container" data-text="EEE powers the world by bridging electrical energy and electronic innovation." data-duration="50"></div>
-              </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center mb-4" >
+      <div class="col-12 col-md-10">
+        <div id="carouselExampleControls" class="carousel slide mt-5 " data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow-sm">
+            <div class="carousel-item active position-relative">
+              <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="d-block w-100 img-fluid" alt="CSE">
+              <div class="typing-container" data-text="CSE empowers minds to build the future through code and innovation." data-duration="50"></div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+            <div class="carousel-item position-relative">
+              <img src="https://gametelecomunicaciones.com/wp-content/uploads/2022/08/iStock-1397047877-scaled.jpg" class="d-block w-100 img-fluid" alt="ECE">
+              <div class="typing-container" data-text="ECE is the backbone of modern communication and electronic innovation." data-duration="50"></div>
+            </div>
+            <div class="carousel-item position-relative">
+              <img src="https://pitt.ac.in/wp-content/uploads/2023/01/cropped-EEE-background-1024x615.png" class="d-block w-100 img-fluid" alt="EEE">
+              <div class="typing-container" data-text="EEE powers the world by bridging electrical energy and electronic innovation." data-duration="50"></div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-center" id="branch">
-        <div class="col-12 col-sm-10 col-md-6">
-          <div class="card text-center shadow">
-            <h5 class="mb-3">Choose Your Branch</h5>
-            <select id="select" class="form-select shadow-sm text-center">
-              <option value="select" selected>-- Select Your Branch --</option>
-              <option value="cse">CSE</option>
-              <option value="ece">ECE</option>
-              <option value="eee">EEE</option>
-            </select>
-            <p id="para" class=" mt-3 text-muted"></p>
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </div>
 
-    <section id="aboutUs" class="about-section py-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-          <h3 class="text-center fw-bold mb-4" style="color:#2c3e50;">About Us</h3>
-          <p class="text-muted fs-5">
-            <strong>BTech Mastery Hub</strong> is a dedicated platform designed to guide B.Tech students throughout their academic journey. 
-            Whether you're pursuing Computer Science, Electronics & Communication, or Electrical Engineering, we provide structured roadmaps, subject-wise materials, and curated resources to help you excel.
-          </p>
-          <p class="text-muted fs-5">
-            Our mission is to simplify complex topics, bridge the gap between academics and real-world applications, and empower students with the tools and knowledge they need to master their domain.
-          </p>
+    <div class="row justify-content-center" id="branch">
+      <div class="col-12 col-sm-10 col-md-6">
+        <div class="card text-center shadow">
+          <h5 class="mb-3">Choose Your Branch</h5>
+          <select id="select" class="form-select shadow-sm text-center">
+            <option value="select" selected>-- Select Your Branch --</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+          </select>
+          <p id="para" class=" mt-3 text-muted"></p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
+  <section id="aboutUs" class="about-section py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <h3 class="text-center fw-bold mb-4" style="color:#2c3e50;">About Us</h3>
+        <p class="text-muted fs-5">
+          <strong>BTech Mastery Hub</strong> is a dedicated platform designed to guide B.Tech students throughout their academic journey. 
+          Whether you're pursuing Computer Science, Electronics & Communication, or Electrical Engineering, we provide structured roadmaps, subject-wise materials, and curated resources to help you excel.
+        </p>
+        <p class="text-muted fs-5">
+          Our mission is to simplify complex topics, bridge the gap between academics and real-world applications, and empower students with the tools and knowledge they need to master their domain.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="text-center mt-5 py-3 bg-dark text-white">
+    &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
+  </footer>
+
+
+
+<script>
+
+  let selectEl = document.getElementById("select");
+  let link;
+  selectEl.addEventListener("change", function (event) {
+      console.log(event.target.value);
+      if (event.target.value === "cse") {
+          window.location.href="page1.html";
+      } else if (event.target.value === "ece") {
+          window.location.href="page2.html"
+      } else if (event.target.value === "eee") {
+          window.location.href="page3.html"
+      }
+  });
+  window.addEventListener('beforeunload', function (event) {
+      selectEl.selectedIndex = "select";
+  });
   
-    <footer class="text-center mt-5 py-3 bg-dark text-white">
-      &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
-    </footer>
-  
 
- 
-  <script>
+  function typeText(el, text, speed) {
+    el.classList.remove('typing');
+    el.textContent = '';
+    let i = 0;
+    function typeChar() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeChar, speed);
+      } else {
+        el.classList.add('typing');
+      }
+    }
+    typeChar();
+  }
 
-    let selectEl = document.getElementById("select");
-    let link;
-    selectEl.addEventListener("change", function (event) {
-        console.log(event.target.value);
-        if (event.target.value === "cse") {
-            window.location.href="page1.html";
-        } else if (event.target.value === "ece") {
-            window.location.href="page2.html"
-        } else if (event.target.value === "eee") {
-            window.location.href="page3.html"
-        }
-    });
-    window.addEventListener('beforeunload', function (event) {
-        selectEl.selectedIndex = "select";
-    });
-    
 
-    function typeText(el, text, speed) {
+
+  function startTypingOnActiveSlide() {
+    document.querySelectorAll('.typing-container').forEach(el => {
       el.classList.remove('typing');
-      el.textContent = '';
-      let i = 0;
-      function typeChar() {
-        if (i < text.length) {
-          el.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeChar, speed);
-        } else {
-          el.classList.add('typing');
-        }
-      }
-      typeChar();
+    });
+
+    const activeSlide = document.querySelector('.carousel-item.active .typing-container');
+    if (activeSlide) {
+      const text = activeSlide.getAttribute('data-text');
+      const duration = parseInt(activeSlide.getAttribute('data-duration')) || 50;
+      typeText(activeSlide, text, duration);
     }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', startTypingOnActiveSlide);
+  const carousel = document.querySelector('#carouselExampleControls');
+  carousel.addEventListener('slid.bs.carousel', startTypingOnActiveSlide);
 
   
-
-    function startTypingOnActiveSlide() {
-      document.querySelectorAll('.typing-container').forEach(el => {
-        el.classList.remove('typing');
-      });
-
-      const activeSlide = document.querySelector('.carousel-item.active .typing-container');
-      if (activeSlide) {
-        const text = activeSlide.getAttribute('data-text');
-        const duration = parseInt(activeSlide.getAttribute('data-duration')) || 50;
-        typeText(activeSlide, text, duration);
-      }
-    }
+</script>
 
 
-    document.addEventListener('DOMContentLoaded', startTypingOnActiveSlide);
-    const carousel = document.querySelector('#carouselExampleControls');
-    carousel.addEventListener('slid.bs.carousel', startTypingOnActiveSlide);
-
-    
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
