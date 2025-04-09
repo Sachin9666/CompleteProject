@@ -48,11 +48,16 @@
     }
 
     .explore-link {
-      display: inline-flex;
-      align-items: center;
+      display: block;
       color: #007bff;
       font-weight: 500;
       text-decoration: none;
+    }
+
+    .explore-link span {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
     }
 
     .explore-link svg {
@@ -69,65 +74,92 @@
 <body>
   <div class="container py-5">
     <h1 class="section-title">Electronics and Communication Engineering</h1>
+    
     <div class="row">
 
       <div class="col-12 col-md-6 col-lg-3 mb-4">
-        <div class="card">
-          <img src="https://www.iiitd.ac.in/sites/all/themes/gavias_educar/images/internal-img-3.jpg" alt="ECE 1st Year">
-          <h2 class="card-title">ECE 1st Year</h2>
-          <a href="ece1.html" class="explore-link">
-            Explore
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3 mb-4">
-        <div class="card">
-          <img src="https://miet.ac.in/media_image/vision/2023_12_26_02_37_37_8283vission_ece.jpg" alt="ECE 2nd Year">
-          <h2 class="card-title">ECE 2nd Year</h2>
-          <a href="ece2.html" class="explore-link">
-            Explore
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3 mb-4">
-        <div class="card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-91y3qmNIgILiRnKeNVZDXDDD0y_QJgWNEA&s" alt="ECE 3rd Year">
-          <h2 class="card-title">ECE 3rd Year</h2>
-          <a href="ece3.html" class="explore-link">
-            Explore
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-            </svg>
-          </a>
-        </div>
+        <a href="ece1.html" class="explore-link">
+          <div class="card">
+            <img src="https://www.iiitd.ac.in/sites/all/themes/gavias_educar/images/internal-img-3.jpg" alt="ECE 1st Year">
+            <h3 class="card-title">ECE 1st Year</h3>
+            <span>
+              Explore
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 
+                      .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 
+                      8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </span>
+          </div>
+        </a>
       </div>
 
 
       <div class="col-12 col-md-6 col-lg-3 mb-4">
-        <div class="card">
-          <img src="https://vignanits.ac.in/wp-content/uploads/2021/11/Can-ECE-students-get-govt-jobs.jpg" alt="ECE 4th Year">
-          <h2 class="card-title">ECE 4th Year</h2>
-          <a href="ece4.html" class="explore-link">
-            Explore
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-            </svg>
-          </a>
-        </div>
+        <a href="ece2.html" class="explore-link">
+          <div class="card">
+            <img src="https://miet.ac.in/media_image/vision/2023_12_26_02_37_37_8283vission_ece.jpg" alt="ECE 2nd Year">
+            <h3 class="card-title">ECE 2nd Year</h3>
+            <span>
+              Explore
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 
+                      .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 
+                      8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="ece3.html" class="explore-link">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-91y3qmNIgILiRnKeNVZDXDDD0y_QJgWNEA&s" alt="ECE 3rd Year">
+            <h3 class="card-title">ECE 3rd Year</h3>
+            <span>
+              Explore
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 
+                      .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 
+                      8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="ece4.html" class="explore-link">
+          <div class="card">
+            <img src="https://vignanits.ac.in/wp-content/uploads/2021/11/Can-ECE-students-get-govt-jobs.jpg" alt="ECE 4th Year">
+            <h3 class="card-title">ECE 4th Year</h3>
+            <span>
+              Explore
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 
+                      .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 1 1-.708-.708L10.293 
+                      8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </span>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="back-btn">
       <a class="btn btn-primary" href="project.html">Back</a>
     </div>
+
   </div>
 </body>
 </html>
