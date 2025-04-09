@@ -2,122 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page1</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  />
-    <style>
-        .card {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            padding: 20px;
-        }
-        .card:hover { 
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE Branch</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    h1.section-title {
+      font-size: 32px;
+      font-weight: bolder;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .card {
+      background-color: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h5 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      color: #212529;
+    }
+
+    .explore-btn {
+      color: #007bff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .explore-btn:hover {
+      text-decoration: underline;
+      color: #0056b3;
+    }
+
+    .back-button {
+      text-align: right;
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="explore-menu-section pt-5 pb-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <h1 style="font-size:28px;margin-bottom: 30px;">Computer Science & Engineering</h1>
-                </div>
-                <a href="cse1.html"  style="border:0px;box-shadow: none;">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow card p-3 mb-3" style="background-color:rgb(255, 255, 255);border-radius: 5px;">
-                            <img
-                            src="https://srmap.edu.in/wp-content/uploads/2023/10/cse-blog.jpg"
-                            class=" w-100" style="height:160px;width:200px;border-radius: 5px;"
-                            />
-                            <h1 style="font-size:20px;margin:5px;color:black">CSE 1st Year</h1>
-                            <a href="cse1.html" style="border:0px;box-shadow: none;color:black">
-                            Explore
-                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                fill-rule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-                                />
-                            </svg>
-                            </a>
-                        </div>
-                    </div>
-                </a>
-                <a href="cse2.html"  style="border:0px;box-shadow: none;">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow card p-3 mb-3">
-                            <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQF8KPPXD2h-BSvwlfH2575cPXp7WIj_WUsg&s"
-                            class="course-image w-100"  style="height:160px;width:200px;border-radius: 5px;"
-                            />
-                            <h1 style="font-size:20px;margin:5px;color:black">CSE 2nd Year</h1>
-                            <a href="" style="border:0px;box-shadow: none;color:black">
-                                Explore
-                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                fill-rule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-                                />
-                            </svg>
-                            </a>
-                        </div>
-                    </div>
-                </a>
-                <a href="cse3.html"  style="border:0px;box-shadow: none;">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow card p-3 mb-3">
-                        <img
-                            src="https://shooliniuniversity.com/blog/wp-content/uploads/2022/04/Web-development.jpg"
-                            class="course-image w-100"  style="height:160px;width:200px;border-radius: 5px;"
-                        />
-                        <h1 style="font-size:20px;margin:5px;color:black">CSE 3rd Year</h1>
-                        <a href="" style="border:0px;box-shadow: none;color:black">
-                            Explore
-                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                fill-rule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-                            />
-                            </svg>
-                        </a>
-                        </div>
-                    </div>
-                </a>
-                  <a href="cse4.html"  style="border:0px;box-shadow: none;">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow card p-3 mb-3">
-                            <img
-                                src="https://shooliniuniversity.com/blog/wp-content/uploads/2022/03/Btech-CSE.jpg"
-                                class="course-image w-100"  style="height:160px;width:200px;border-radius: 5px;"
-                            />
-                            <h1 style="font-size:20px;margin:5px;color:black" >CSE 4th Year</h1>
-                            <a href=""  style="border:0px;box-shadow: none;color:black">
-                                Explore
-                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-                                />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+  <div class="container pt-5 pb-5">
+    <h1 class="section-title">Computer Science & Engineering</h1>
+    <div class="row">
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="cse1.html" style="text-decoration: none;">
+          <div class="card p-3">
+            <img src="https://srmap.edu.in/wp-content/uploads/2023/10/cse-blog.jpg" class="w-100" />
+            <h5>CSE 1st Year</h5>
+            <span class="explore-btn">
+              Explore
+              <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="cse2.html" style="text-decoration: none;">
+          <div class="card p-3">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQF8KPPXD2h-BSvwlfH2575cPXp7WIj_WUsg&s"
+              class="w-100" />
+            <h5>CSE 2nd Year</h5>
+            <span class="explore-btn">
+              Explore
+              <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="cse3.html" style="text-decoration: none;">
+          <div class="card p-3">
+            <img src="https://shooliniuniversity.com/blog/wp-content/uploads/2022/04/Web-development.jpg"
+              class="w-100" />
+            <h5>CSE 3rd Year</h5>
+            <span class="explore-btn">
+              Explore
+              <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <a href="cse4.html" style="text-decoration: none;">
+          <div class="card p-3">
+            <img src="https://shooliniuniversity.com/blog/wp-content/uploads/2022/03/Btech-CSE.jpg" class="w-100" />
+            <h5>CSE 4th Year</h5>
+            <span class="explore-btn">
+              Explore
+              <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
     </div>
-    <div style="text-align: right;" class="mb-5">
-        <a class="btn btn-primary" href="index.html">Back</a>
-    </div>
+    <div class="back-button">
+        <a class="btn btn-primary" href="project.html">Back</a>
+      </div>
+</div>
 </body>
 
 </html>
