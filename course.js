@@ -72,35 +72,35 @@ function initializeCheckboxes() {
     if (saveButton12) {
         saveButton12.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton13 = document.getElementById('saveButton12');
+    let saveButton13 = document.getElementById('saveButton13');
     if (saveButton13) {
         saveButton13.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton14 = document.getElementById('saveButton12');
+    let saveButton14 = document.getElementById('saveButton14');
     if (saveButton14) {
         saveButton14.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton15 = document.getElementById('saveButton12');
+    let saveButton15 = document.getElementById('saveButton15');
     if (saveButton15) {
         saveButton15.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton16 = document.getElementById('saveButton12');
+    let saveButton16 = document.getElementById('saveButton16');
     if (saveButton16) {
         saveButton16.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton17 = document.getElementById('saveButton12');
+    let saveButton17 = document.getElementById('saveButton17');
     if (saveButton17) {
         saveButton17.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton18 = document.getElementById('saveButton12');
+    let saveButton18 = document.getElementById('saveButton18');
     if (saveButton18) {
         saveButton18.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton19 = document.getElementById('saveButton12');
+    let saveButton19 = document.getElementById('saveButton19');
     if (saveButton19) {
         saveButton19.addEventListener('click', saveAllCheckboxStates);
     }
-    let saveButton20 = document.getElementById('saveButton12');
+    let saveButton20 = document.getElementById('saveButton20');
     if (saveButton20) {
         saveButton20.addEventListener('click', saveAllCheckboxStates);
     }
