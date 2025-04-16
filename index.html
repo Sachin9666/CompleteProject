@@ -282,6 +282,7 @@
             <option value="ece">ECE</option>
             <option value="eee">EEE</option>
             <option value="mech">MECH</option>
+            <option value="civil">CIVIL</option>
           </select>
           <p id="para" class=" mt-3 text-muted"></p>
         </div>
@@ -328,6 +329,9 @@
       }
         else if (event.target.value === "mech") {
           window.location.href="page4.html"
+      }
+    else if (event.target.value === "civil") {
+          window.location.href="page5.html"
       }
   });
   window.addEventListener('beforeunload', function (event) {
