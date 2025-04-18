@@ -7,387 +7,532 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BTech Mastery Hub</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+      --success-color: #2ecc71;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
       background: #f8f9fa;
       margin: 0;
       padding: 0;
-    }  
+      color: #333;
+      line-height: 1.6;
+    }
 
-    h1 {
-      text-align: center;
-      margin-top: 40px;
+    .navbar {
+      background: var(--secondary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
       font-weight: 700;
-      color: #2c3e50;
+      color: white !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+      margin-bottom: 3rem;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .hero-title {
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-weight: 300;
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-weight: 700;
+      color: var(--secondary-color);
     }
 
     .card {
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 30px;
-      background-color: #ffffff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      padding: 1.2rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .branch-card {
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .branch-card:hover {
+      border-left: 4px solid var(--accent-color);
     }
 
     #select {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ced4da;
-      
+      transition: all 0.3s ease;
+      text-align: center;
     }
-    #select:hover{
-      border-color: rgb(2, 10, 255);
+
+    #select:hover {
+      border-color: var(--primary-color);
       background-color: #f1f3f5;
     }
 
-    .carousel-container {
-      max-width: 1000px;
-      margin: 30px auto;
-    }
-
-    .carousel-inner img {
-      height: 60vh;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .typing-container {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 4px 8px;
-      border-radius: 8px;
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #ffffff;
-    }
-
-    .typing-container.typing::after {
-      content: '';
-      animation: blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes blink-caret {
-      0%, 100% {
-        border-color: transparent;
-      }
-      50% {
-        border-color: white;
-      }
-    }
-    .about-section {
-    background-color: #f1f3f5;
-    border-radius: 12px;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-  }
-    footer {
+    .section-title {
+      position: relative;
+      margin-bottom: 2.5rem;
       text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #2c3e50;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .about-section {
+      background: white;
+      padding: 4rem 0;
+      border-radius: 15px;
+      margin: 3rem 0;
+    }
+
+    .contact-card {
+      background: var(--secondary-color);
       color: white;
     }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: var(--primary-color);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 10px 25px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .btn-primary:hover {
+      background-color: #2980b9;
+      border-color: #2980b9;
+    }
+
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    footer {
+      background: var(--secondary-color);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .branch-image {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .testimonial-card {
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
   </style>
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">BTech Mastery Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#branches">Branches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BTech Mastery Hub</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-
-  body {
-    
-    background: #f8f9fa;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-  }
-
-  h1 {
-    text-align: center;
-    margin-top: 40px;
-    font-weight: 700;
-    color: #2c3e50;
-  }
-
-
-  .card {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  }
-
-  #select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    transition: 0.3s ease;
-  }
-
-  #select:hover {
-    border-color: rgb(2, 10, 255);
-    background-color: #f1f3f5;
-  }
-
-
-
-
-  .typing-container {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 600;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #ffffff;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 10px 18px;
-    border-radius: 8px;
-  }
-
-  .typing-container.typing::after {
-    content: '';
-    animation: blink-caret 0.75s step-end infinite;
-  }
-
-  @keyframes blink-caret {
-    0%, 100% {
-      border-color: transparent;
-    }
-    50% {
-      border-color: white;
-    }
-  }
-
-  .about-section {
-    background-color: #d7dde3;
-    border-radius: 12px;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-    
-  }
-
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-    font-size: 0.95rem;
-  }
-  .img{
-    border-radius: 15px;
-  }
-
-</style>
-
-  </style>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-  <div class="container-fluid p-2 px-4">
-    <a class="navbar-brand" href="#">BTech Mastery Hub</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#testNavbar" aria-controls="testNavbar"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="testNavbar">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#branch">Branches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#carouselExampleControls">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#aboutUs">About Us</a>
-        </li>
-      </ul>
+  <div class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Master Your BTech Journey</h1>
+      <p class="hero-subtitle">Comprehensive resources, roadmaps, and guidance for every engineering branch</p>
+      <a href="#branches" class="btn btn-light btn-lg px-4">Explore Branches</a>
     </div>
   </div>
-</nav>
 
-  <div class="container mt-5">
-    <div class="row justify-content-center mb-4" >
-      <div class="col-12 col-md-10">
-        <div id="carouselExampleControls" class="carousel slide mt-5 " data-bs-ride="carousel">
-          <div class="carousel-inner rounded shadow-sm">
-            <div class="carousel-item active position-relative">
-              <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="d-block w-100 img-fluid img" alt="CSE">
-              <div class="typing-container" data-text="CSE empowers minds to build the future through code and innovation." data-duration="50"></div>
-            </div>
-            <div class="carousel-item position-relative">
-              <img src="https://gametelecomunicaciones.com/wp-content/uploads/2022/08/iStock-1397047877-scaled.jpg" class="d-block w-100 img-fluid img" alt="ECE">
-              <div class="typing-container" data-text="ECE is the backbone of modern communication and electronic innovation." data-duration="50"></div>
-            </div>
-            <div class="carousel-item position-relative">
-              <img src="https://pitt.ac.in/wp-content/uploads/2023/01/cropped-EEE-background-1024x615.png" class="d-block w-100 img-fluid img" alt="EEE">
-              <div class="typing-container" data-text="EEE powers the world by bridging electrical energy and electronic innovation." data-duration="50"></div>
-            </div>
-            <div class="carousel-item position-relative">
-              <img src="https://t3.ftcdn.net/jpg/07/39/73/78/360_F_739737821_78fGGQ6Tq48CFzdHTu3H3l4VrULBH5wY.jpg" class="d-block w-100 img-fluid img" alt="EEE">
-              <div class="typing-container" data-text="Mechanical engineering is the art of turning ideas into motion and metal into miracles." data-duration="50"></div>
-            </div>
-            <div class="carousel-item position-relative">
-              <img src="https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2l2aWwlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100 img-fluid img" alt="EEE">
-              <div class="typing-container" data-text="Civil engineering is the foundation of civilization—building the world one structure at a time." data-duration="50"></div>
+  <div class="container">
+    <section id="branches" class="my-5 py-4">
+      <h2 class="section-title">Choose Your Branch</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-4">Select your engineering branch</h5>
+              <select id="select" class="form-select mb-3">
+                <option value="select" selected>-- Select Your Branch --</option>
+                <option value="cse">Computer Science & Engineering (CSE)</option>
+                <option value="ece">Electronics & Communication (ECE)</option>
+                <option value="eee">Electrical & Electronics (EEE)</option>
+                <option value="mech">Mechanical Engineering</option>
+                <option value="civil">Civil Engineering</option>
+              </select>
+              <p id="para" class="text-muted small">We'll guide you through your academic journey</p>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
         </div>
       </div>
-    </div>
 
-    <div class="row justify-content-center mt-3" id="branch">
-      <div class="col-12 col-sm-10 col-md-6">
-        <div class="card text-center shadow">
-          <h5 class="mb-3">Choose Your Branch</h5>
-          <select id="select" class="form-select shadow-sm text-center">
-            <option value="select" selected>-- Select Your Branch --</option>
-            <option value="cse">CSE</option>
-            <option value="ece">ECE</option>
-            <option value="eee">EEE</option>
-            <option value="mech">MECH</option>
-            <option value="civil">CIVIL</option>
-          </select>
-          <p id="para" class=" mt-3 text-muted"></p>
+      <div class="row mt-5">
+
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://assets.skyfilabs.com/images/blog/cse-mini-projects.webp" class="branch-image card-img-top" alt="CSE">
+            <div class="card-body">
+              <h5 class="card-title">Computer Science</h5>
+              <p class="card-text">Master algorithms, programming, and cutting-edge technologies with our comprehensive CSE resources.</p>
+              <a href="page1.html" class="btn btn-outline-primary">Explore CSE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://gametelecomunicaciones.com/wp-content/uploads/2022/08/iStock-1397047877-scaled.jpg" class="branch-image card-img-top" alt="ECE">
+            <div class="card-body">
+              <h5 class="card-title">Electronics & Communication</h5>
+              <p class="card-text">Dive into circuits, signals, and communication systems with our specialized ECE materials.</p>
+              <a href="page2.html" class="btn btn-outline-primary">Explore ECE</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://pitt.ac.in/wp-content/uploads/2023/01/cropped-EEE-background-1024x615.png" class="branch-image card-img-top" alt="EEE">
+            <div class="card-body">
+              <h5 class="card-title">Electrical Engineering</h5>
+              <p class="card-text">Understand power systems, electronics, and electrical machines with our EEE resources.</p>
+              <a href="page3.html" class="btn btn-outline-primary">Explore EEE</a>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://t3.ftcdn.net/jpg/07/39/73/78/360_F_739737821_78fGGQ6Tq48CFzdHTu3H3l4VrULBH5wY.jpg" class="branch-image card-img-top" alt="Mechanical Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Mechanical Engineering</h5>
+              <p class="card-text">Explore thermodynamics, machine design, and manufacturing processes with our ME resources.</p>
+              <a href="page4.html" class="btn btn-outline-primary">Explore ME</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2l2aWwlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D" class="branch-image card-img-top" alt="Civil Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Civil Engineering</h5>
+              <p class="card-text">Master structural design, construction technology, and infrastructure planning with our CE materials.</p>
+              <a href="page5.html" class="btn btn-outline-primary">Explore CE</a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-4 mb-4">
+          <div class="card branch-card h-100">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="branch-image card-img-top" alt="All Engineering Branches">
+            <div class="card-body">
+              <h5 class="card-title">All Engineering Branches</h5>
+              <p class="card-text">Access common resources, aptitude materials, and interview preparation for all engineering disciplines.</p>
+              <a href="#branches" class="btn btn-outline-primary">Explore All</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section id="features" class="my-5 py-4">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <div class="feature-icon">
+              <i class="fas fa-road"></i>
+            </div>
+            <h4>Structured Roadmaps</h4>
+            <p>Step-by-step guides for each semester to keep you on track and focused.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <div class="feature-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h4>Comprehensive Materials</h4>
+            <p>Curated notes, reference books, and study materials for every subject.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h4>Practical Projects</h4>
+            <p>Hands-on project ideas and implementations to enhance your skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">About BTech Mastery Hub</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                 alt="Students learning" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-3">Empowering Engineering Students</h3>
+            <p>BTech Mastery Hub was founded with a simple mission: to make engineering education more accessible, organized, and practical for students across all branches.</p>
+            <p>Our platform brings together the best resources, structured learning paths, and practical guidance to help you not just survive but thrive in your engineering journey.</p>
+            <p>Whether you're struggling with core concepts or looking for advanced project ideas, we've got you covered.</p>
+            <div class="d-flex align-items-center mt-4">
+              <div class="me-4">
+                <h4 class="mb-0">5000+</h4>
+                <p class="text-muted mb-0">Students</p>
+              </div>
+              <div class="me-4">
+                <h4 class="mb-0">50+</h4>
+                <p class="text-muted mb-0">Courses</p>
+              </div>
+              <div>
+                <h4 class="mb-0">100%</h4>
+                <p class="text-muted mb-0">Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="my-5 py-4">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 contact-card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Contact Information</h4>
+              <div class="mb-3">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <span>123 Engineering Lane, Tech City, IN 560001</span>
+              </div>
+              <div class="mb-3">
+                <i class="fas fa-phone contact-icon"></i>
+                <span>+91 9876543210</span>
+              </div>
+              <div class="mb-3">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span>contact@btechmasteryhub.com</span>
+              </div>
+              <div class="mt-4">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Send Us a Message</h4>
+              <form>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <div id="aboutUs" class="about-section py-5">
+  <footer>
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
-          <h3 class="text-center fw-bold mb-4" style="color:#2c3e50;">About Us</h3>
-          <p class="text-muted fs-5">
-            <strong>BTech Mastery Hub</strong> is a dedicated platform designed to guide B.Tech students throughout their academic journey. 
-            Whether you're pursuing Computer Science, Electronics & Communication, or Electrical Engineering, we provide structured roadmaps, subject-wise materials, and curated resources to help you excel.
-          </p>
-          <p class="text-muted fs-5">
-            Our mission is to simplify complex topics, bridge the gap between academics and real-world applications, and empower students with the tools and knowledge they need to master their domain.
-          </p>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5>BTech Mastery Hub</h5>
+          <p>Your complete guide to engineering excellence. We provide the resources, you provide the dedication.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Home</a></li>
+            <li><a href="#branches" class="text-white">Branches</a></li>
+            <li><a href="#features" class="text-white">Features</a></li>
+            <li><a href="#about" class="text-white">About Us</a></li>
+            <li><a href="#contact" class="text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Newsletter</h5>
+          <p>Subscribe to get updates on new resources and features.</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
         </div>
       </div>
+      <hr class="bg-light">
+      <div class="text-center py-3">
+        <p class="mb-0">&copy; 2025 BTech Mastery Hub. All rights reserved.</p>
+      </div>
     </div>
-  </div>
-
-
-  <footer class="text-center mt-5 py-3 bg-dark text-white">
-    &copy; 2025 BTech Mastery Hub. Crafted with 💻 & ❤️
   </footer>
 
-
-
-<script>
-
-  let selectEl = document.getElementById("select");
-  let link;
-  selectEl.addEventListener("change", function (event) {
+  <script>
+    let selectEl = document.getElementById("select");
+    selectEl.addEventListener("change", function (event) {
       console.log(event.target.value);
       if (event.target.value === "cse") {
-          window.location.href="page1.html";
+        window.location.href = "page1.html";
       } else if (event.target.value === "ece") {
-          window.location.href="page2.html"
+        window.location.href = "page2.html"
       } else if (event.target.value === "eee") {
-          window.location.href="page3.html"
+        window.location.href = "page3.html"
+      } else if (event.target.value === "mech") {
+        window.location.href = "page4.html"
+      } else if (event.target.value === "civil") {
+        window.location.href = "page5.html"
       }
-        else if (event.target.value === "mech") {
-          window.location.href="page4.html"
-      }
-    else if (event.target.value === "civil") {
-          window.location.href="page5.html"
-      }
-  });
-  window.addEventListener('beforeunload', function (event) {
+    });
+    window.addEventListener('beforeunload', function (event) {
       selectEl.selectedIndex = "select";
-  });
-  
-
-  function typeText(el, text, speed) {
-    el.classList.remove('typing');
-    el.textContent = '';
-    let i = 0;
-    function typeChar() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeChar, speed);
-      } else {
-        el.classList.add('typing');
-      }
-    }
-    typeChar();
-  }
-
-
-
-  function startTypingOnActiveSlide() {
-    document.querySelectorAll('.typing-container').forEach(el => {
-      el.classList.remove('typing');
     });
 
-    const activeSlide = document.querySelector('.carousel-item.active .typing-container');
-    if (activeSlide) {
-      const text = activeSlide.getAttribute('data-text');
-      const duration = parseInt(activeSlide.getAttribute('data-duration')) || 50;
-      typeText(activeSlide, text, duration);
-    }
-  }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 
-
-  document.addEventListener('DOMContentLoaded', startTypingOnActiveSlide);
-  const carousel = document.querySelector('#carouselExampleControls');
-  carousel.addEventListener('slid.bs.carousel', startTypingOnActiveSlide);
-
-  
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
