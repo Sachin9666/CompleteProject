@@ -190,6 +190,35 @@
       object-fit: cover;
       border-radius: 12px 12px 0 0;
     }
+    
+    /* Profile styles */
+    .profile-container {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    
+    .profile-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid var(--primary-color);
+    }
+    
+    .profile-name {
+      color: white;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
   </style>
 </head>
 
@@ -221,7 +250,12 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-        </ul>
+        
+        <li class="profile-container" id="profileContainer" style="display: none;">
+          <span class="profile-name" id="profileName"></span>
+          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile" class="profile-image" id="profileImage">
+        </li>
+      </ul>
       </div>
     </div>
   </nav>
@@ -394,29 +428,26 @@
     </section>
   </div>
 
-  <footer>
+  <footer id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 mb-4">
-          <h5>BTech Mastery Hub</h5>
+        <div class="col-md-4 m-auto">
+          <h5 style="color:white;">BTech Mastery Hub</h5>
           <p>Your complete guide to engineering excellence. We provide the resources, you provide the dedication.</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#home" class="text-white">Home</a></li>
-            <li><a href="#branches" class="text-white">Branches</a></li>
-            <li><a href="#features" class="text-white">Features</a></li>
-            <li><a href="#about" class="text-white">About Us</a></li>
-            <li><a href="#contact" class="text-white">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 m-auto">
           <h5>Newsletter</h5>
           <p>Subscribe to get updates on new resources and features.</p>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Your Email">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+            <input type="email" class="form-control" placeholder="Your Email" id="newsletterEmail">
+            <button class="btn btn-primary" type="button" id="subscribeBtn">Subscribe</button>
+          </div>
+          <div id="nameInputContainer" style="display: none;">
+            <p>We'd like to know you better!</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" id="userNameInput">
+              <button class="btn btn-success" type="button" id="saveNameBtn">Save</button>
+            </div>
           </div>
         </div>
       </div>
@@ -426,6 +457,17 @@
       </div>
     </div>
   </footer>
+
+
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toastNotification">
+    <div class="toast-header">
+      <strong class="me-auto">BTech Mastery Hub</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="toastMessage">
+      Welcome to BTech Mastery Hub!
+    </div>
+  </div>
 
   <script>
     let selectEl = document.getElementById("select");
@@ -455,6 +497,85 @@
         });
       });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const newsletterSection = document.querySelector('.col-md-4.m-auto:nth-child(2)'); 
+  const newsletterEmail = document.getElementById('newsletterEmail');
+  const subscribeBtn = document.getElementById('subscribeBtn');
+  const nameInputContainer = document.getElementById('nameInputContainer');
+  const userNameInput = document.getElementById('userNameInput');
+  const saveNameBtn = document.getElementById('saveNameBtn');
+  const profileContainer = document.getElementById('profileContainer');
+  const profileName = document.getElementById('profileName');
+  const profileImage = document.getElementById('profileImage');
+  const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
+  const toastMessage = document.getElementById('toastMessage');
+
+
+  const savedName = localStorage.getItem('userName');
+  if (savedName) {
+    showProfile(savedName);
+    newsletterSection.style.display = 'none';
+  }
+
+  subscribeBtn.addEventListener('click', function() {
+    const email = newsletterEmail.value.trim();
+    
+    if (email === '') {
+      showToast('Please enter your email address');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      showToast('Please enter a valid email address');
+      return;
+    }
+    
+    localStorage.setItem('subscribedEmail', email);
+    newsletterEmail.value = '';
+    
+    if (!localStorage.getItem('userName')) {
+      nameInputContainer.style.display = 'block';
+      showToast('Thanks for subscribing! Please tell us your name.');
+    } else {
+      showToast('Thanks for subscribing!');
+      newsletterSection.style.display = 'none';
+    }
+  });
+  
+  saveNameBtn.addEventListener('click', function() {
+    const name = userNameInput.value.trim();
+    
+    if (name === '') {
+      showToast('Please enter your name');
+      return;
+    }
+    
+    localStorage.setItem('userName', name);
+    nameInputContainer.style.display = 'none';
+    userNameInput.value = '';
+    
+    showProfile(name);
+    showToast(`Welcome, ${name}!`);
+    
+    newsletterSection.style.display = 'none';
+  });
+  
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+  
+  function showProfile(name) {
+    profileName.textContent = name;
+    profileContainer.style.display = 'flex';
+  }
+  
+  function showToast(message) {
+    toastMessage.textContent = message;
+    toastNotification.show();
+  }
+});
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
